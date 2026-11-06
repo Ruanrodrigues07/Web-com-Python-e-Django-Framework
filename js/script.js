@@ -22,7 +22,5 @@ function mudar_texto() {
 
 function Incrementar() {
     var p1 = document.getElementById("p1");
-    for(var i = 0; i < 1000; i++) {
-        p1.innerText = parseInt(p1.innerText) + 1;
-    }
+    p1.innerText = parseInt(p1.innerText) + 1;
 }
