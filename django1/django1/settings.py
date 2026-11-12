@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,6 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0fg0jy5hcls=h2jrdlqad%y(v#4*_6h0te#%p-m)!dn+b_vi!a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+# DEBUG = False Usado para produção, mas para desenvolvimento é melhor deixar como True
+# DEBUG = True Usado para desenvolvimento, mas para produção é melhor deixar como False
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -116,9 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/' # usando durante o desenvolvimento, mas em produção é melhor usar um servidor web para servir arquivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # usado para coletar todos os arquivos estáticos em um único diretório para produção
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGOUT_REDIRECT_URL = 'index' # redireciona para a página de index após o logout
