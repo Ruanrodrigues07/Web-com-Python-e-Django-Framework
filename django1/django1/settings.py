@@ -28,9 +28,9 @@ SECRET_KEY = 'django-insecure-0fg0jy5hcls=h2jrdlqad%y(v#4*_6h0te#%p-m)!dn+b_vi!a
 # DEBUG = False Usado para produção, mas para desenvolvimento é melhor deixar como True
 # DEBUG = True Usado para desenvolvimento, mas para produção é melhor deixar como False
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # Usado para desenvolvimento, mas para produção é melhor colocar o domínio do site, por exemplo: ['meusite.com', 'www.meusite.com']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # usado para servir arquivos estáticos em produção
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

@@ -1,13 +1,36 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django 1 - Contato</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    <h1>Contato</h1>
+
+    <center>
+
+        <h1>Contato</h1>
+    
+        <img src="{% static 'images/django.png' %}">
+    
+        <div>
+            <h2>
+                {{ cabecalho }}
+            </h2>
+
+            <h2>Nome: {{ nome }}</h2>
+            <h2>Email: {{ email }}</h2>
+            <h2>LinkedIn: <a href="https://www.linkedin.com/in/{{ linkedin }}" target="_blank">{{ linkedin }}</a></h2>
+            <h2>GitHub: <a href="https://github.com/{{ github }}" target="_blank">{{ github }}</a></h2>
+            
+        </div>
+
+    </center>
+
 </body>
+
 </html>

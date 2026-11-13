@@ -10,25 +10,34 @@
 </head>
 
 <body>
+    <center>
 
-    <h1>Produto</h1>
+        <h1>Produto</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>Estoque</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="{% url 'index' %}">{{ produto.nome }}</td>
-                <td>{{ produto.preco }}</td>
-                <td>{{ produto.estoque }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <img src="{% static 'images/django.png' %}">
+        
+        <h2>
+            {{ cabecalho }}
+        </h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="{% url 'index' %}">{{ produto.nome }}</td>
+                    <td>{{ produto.preco }}</td>
+                    <td>{{ produto.estoque }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </center>
 </body>
 
 </html>

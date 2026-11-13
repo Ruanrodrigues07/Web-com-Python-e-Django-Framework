@@ -16,14 +16,24 @@ def index(request):
     return render(request, 'index.html', context)
 
 def contato(request):
-    return render(request, 'contato.html')
+
+    context = {
+        'nome': 'Ruan Rodrigues',
+        'email': 'ruan.arjoaquim@outlook.com',
+        'linkedin': 'ruanrodrigues07',
+        'github': 'ruanrodrigues07',
+        'cabecalho': 'programação web com django framework',
+    }
+
+    return render(request, 'contato.html', context)
 
 def produto(request, pk):
     # produto = Produto.objects.get(id=pk)
     produto = get_object_or_404(Produto, id=pk)
 
     context = {
-        'produto': produto
+        'produto': produto,
+        'cabecalho': 'programação web com django framework',
     }
     return render(request, 'produto.html', context)
 
